@@ -1,0 +1,3 @@
+# Normalise line endings. The image and CI run on Linux; without this, Windows
+# checkouts commit CRLF and shell scripts inside the container break.
+* text=auto eol=lf

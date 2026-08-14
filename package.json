@@ -9,10 +9,10 @@
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src tests",
-    "test": "jest --forceExit",
+    "test": "jest --runInBand --forceExit",
     "test:unit": "jest tests/unit",
-    "test:integration": "jest tests/integration --forceExit",
-    "test:coverage": "jest --coverage --forceExit"
+    "test:integration": "jest tests/integration --runInBand --forceExit",
+    "test:coverage": "jest --coverage --runInBand --forceExit"
   },
   "keywords": [],
   "author": "",

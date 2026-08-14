@@ -107,6 +107,11 @@ npm run test:coverage
 CI starts MongoDB and Redis as service containers, so the integration suite runs
 against real databases on every push without anything installed locally.
 
+Integration suites run with `--runInBand`. They share one database and clear it
+between tests, so parallel workers would wipe each other's fixtures mid-test —
+producing failures that look like application bugs but are not. Serial execution
+is the cost of testing against a real database rather than mocks.
+
 ## Scope and limitations
 
 - Single-node rate limiting assumptions hold only while Redis is shared; a Redis
